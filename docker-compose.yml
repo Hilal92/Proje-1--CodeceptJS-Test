@@ -1,0 +1,26 @@
+
+version: "2"
+services:
+  app:
+    container_name: app
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - firefox-container2
+    volumes:
+      - ./e2eTests:/e2eTests
+      - ./package.json:/package.json
+      - ./package-lock.json:/package-lock.json
+      - ./.gitignore:/.gitignore
+       -./pages:/pages
+      - ./app.js:/app.js
+
+  firefox-container2:
+    container_name: firefox-container2
+    image: selenium/standalone-firefox:latest
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+      - "4444:4444"
+    # can just be expose - 4444, but this allows you to see localhost:4444/wd/hub/static/resource/hub.html
