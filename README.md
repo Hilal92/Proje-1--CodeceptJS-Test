@@ -1,4 +1,4 @@
-# Proje-1---CodeceptJS-ile-U-tan-Uca-Web-Testi
+# Proje---CodeceptJS-End-To-End Web Test
 In this Project  shows how to use the CodeceptJS Docker image as described in the docs so that it is not necessary to install it as a dependency in your application.
 
 Prerequisites
